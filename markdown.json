@@ -1,86 +1,82 @@
 {
-/*
-	Place your snippets for markdown here. Each snippet is defined under a snippet name and has a prefix, body and 
-	description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
-	$1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
-	same ids are connected.
-	Example:
-	"Print to console": {
-		"prefix": "log",
-		"body": [
-			"console.log('$1');",
-			"$2"
-		],
-		"description": "Log output to console"
-	}
-	## Blank Template
-	"": {
-		"prefix": "",
-		"body": [
-			"",
-			""
-		],
-		"description": ""
-	},
-*/
+	/*
+		Place your snippets for markdown here. Each snippet is defined under a snippet name and has a prefix, body and 
+		description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+		$1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+		same ids are connected.
+		Example:
+		"Print to console": {
+			"prefix": "log",
+			"body": [
+				"console.log('$1');",
+				"$2"
+			],
+			"description": "Log output to console"
+		}
+		## Blank Template
+		"": {
+			"prefix": "",
+			"body": [
+				"",
+				""
+			],
+			"description": ""
+		},
+	*/
 
-/*
-	## Quick Reference ##
-	tmdm			TMDM URL
-	mcloud			mCloud URL
+	// ## Quick Reference ##
 
-	addOG			Add Organization Group
-	addUG			Add User Group
-	addUgAd			Add AD User Group
-	addSG			Add Smart Group
-	addSGd			Add Smart Group - Devices and Users
+	// AirWatch ----------------------------------------------------------------
+	/*
+		tmdm				TMDM URL
+		mcloud			mCloud URL
 
-	addVppApp		Add VPP Apps (Workspace ONE)
+		addOG			Add Organization Group
+		addUG			Add User Group
+		addUgAd			Add AD User Group
+		addSG			Add Smart Group
+		addSGd			Add Smart Group - Devices and Users
 
-	MobileIron ------------------------------------------------------------
+		addUser			Add a basic user
+		addUserAD		Add AD user
+
+		addVPPAPP		Add VPP Apps (Workspace ONE)
+		addAppIos		Add Internal app - iOS
+	*/
 	
-	policyRule		"MI: Create a Compliance Police Rule"
+	// MobileIron --------------------------------------------------------------
+	/*
+		policyRule		"MI: Create a Compliance Police Rule"
+	*/
 
-*/
 
 	"???": {
 		"prefix": "??",
-		"body": [
-			"??????????????????????????????????????????????????????????????????"
-		],
+		"body": "??????????????????????????????????????????????????????????????????",
 		"description": "???"
 	},
 
 	"====": {
 		"prefix": "====",
-		"body": [
-			"================================================================================",
-			"$1"
-		],
+		"body": ["================================================================================","$1"],
 		"description": "===="
 	},
 
 	"TMDM": {
 		"prefix": "tmdm",
-		"body": [
-			"tmdm.telstra.com",
-		],
+		"body": "tmdm.telstra.com",
 		"description": "TMDM URL"
 	},
 
 	"mCloud": {
 		"prefix": "mcloud",
-		"body": [
-			"awc.mscmobility.com.au",
-		],
+		"body": "awc.mscmobility.com.au",
 		"description": "mCloud URL"
 	},
 
 	"KME Portal": {
 		"prefix": "kmePortal",
-		"body": [
-			"https://eu-be.samsungknox.com/",
-		],
+		"body": "https://eu-be.samsungknox.com/",
 		"description": "KME Portal URL"
 	},
 
@@ -102,7 +98,7 @@
 			"	Login to https://$4",
 			"		Authenticate with Level 3 account",
 			"		Check CI records for credentials",
-			"	Organization Group: '${6: `Organization Group`}'",
+			"	Organization Group: '${6:`Organization Group`}'",
 			"",
 			"",
 			"",
@@ -112,7 +108,8 @@
 			"",
 			"",
 			"",
-			"","---",
+			"",
+			"---",
 			"# Test Plan",
 			"---",
 			"",
@@ -129,7 +126,7 @@
 			"	Login to https://$1",
 			"		Authenticate with Level 3 account",
 			"		Check CI records for credentials",
-			"	Organization Group: '${2: `Organization Group`}'",
+			"	Organization Group: '${2:`Organization Group`}'",
 			""
 		],
 		"description": "Login"
@@ -140,18 +137,18 @@
 		"prefix": "addOG",
 		"body": [
 			"## Add a child Organization Group",
-			"	From Organization Group level: ",
+			"	From Organization Group level: ${1:`From OG`}",
 			"	Navigate to: Groups & Settings » Groups » Organizational Groups » Organizational Groups Details",
-			"	Add Child Organization Group  ",
-			"		Name: ",
-			"		Group ID: ",
-			"		Type: ",
+			"	Add Child Organization Group",
+			"		Name: ${2:`New OG name`}",
+			"		Group ID: ${3:`New OG group ID`}",
+			"		Type: ${4:`New OG type`}",
 			"		Country: Australia",
 			"		Locale: English (Australia) [English (Australia)]",
-			"		Internal Name: ",
-			"		Display Name: ",
-			"		Status: ",
-			"		Location Type: ",
+			"		Internal Name: ${5:`Internal name`}",
+			"		Display Name: ${6:`Display name`}",
+			"		Status: ${7:`Status`}",
+			"		Location Type: ${8:`Location type`}",
 			"		Time Zone: (GMT+10:00)Melbourne, Victoria, New South Wales",
 			"	Save",
 			""
@@ -166,8 +163,8 @@
 			"	Navigate to: Groups & Settings » Groups » User Groups » List View",
 			"	Add » Add User Group",
 			"		Type: Custom",
-			"		Group Name: {{GroupName}}",
-			"		Description: {{DescriptionGroupName}}",
+			"		Group Name: ${1:`Group Name`}",
+			"		Description: ${2:`Description Group Name`}",
 			"	Save",
 			""
 		],
@@ -175,15 +172,15 @@
 	},
 
 	"Add ADD User Group": {
-		"prefix": "addUgAd",
+		"prefix": "addUGAD",
 		"body": [
 			"## Add LDAP User Group",
 			"	Navigate to: Groups & Settings » Groups » User Groups » List View",
 			"		Add » Add User Group",
 			"		Type: Directory",
 			"		Extended type: Group",
-			"		Search Text: {{ADUserGroupName}}",
-			"		Domain: {{DomainName}}",
+			"		Search Text: ${1:`AD User Group Name`}",
+			"		Domain: ${2:`Domain Name`}",
 			"		Group Base DN: ",
 			"		Search",
 			"	Save",
@@ -199,14 +196,14 @@
 			"	Navigate to: Groups & settings » Groups » Assignment Groups",
 			"	Add Smart Group",
 			"		Choose Type: Select Criteria",
-			"		Name: ",
-			"		Organization Group: ",
-			"		User Group: ",
-			"		Ownership: `Corporate || Employee || Shared || Unknown`",
-			"		Tags: ",
-			"		Platform and Operating System: `Any :: Equals :: Any`",
-			"		Model: ",
-			"		Enterprise OEM Version: `Any :: Equals :: Any`",
+			"		Name: ${1:`Smart Group Name`}",
+			"		Organization Group: ${2:`Organization Group`}",
+			"		User Group: ${3:`User Group`}",
+			"		Ownership: ${4:`Corporate | Employee | Shared | Unknown`}",
+			"		Tags: ${5:`Tags`}",
+			"		Platform and Operating System: ${6:`Any :: Equals :: Any`}",
+			"		Model: ${7:``}",
+			"		Enterprise OEM Version: ${8:`Any :: Equals :: Any`}",
 			"		Additions: ",
 			"		Exclusions: ",
 			"	Save"
@@ -222,15 +219,50 @@
 			"	Add Smart Group",
 			"		Choose Type: Select Devices or Users",
 			"		Ok",
-			"		Name: ${1: `Smart Group Name`}",
+			"		Name: ${1:`Smart Group Name`}",
 			"		Devices:",
 			"			${3:`DeviceName`}",
 			"		Users:",
-			"			${4: `UserName`}",
+			"			${4:`UserName`}",
 			"	Save"
 		],
 		"description": "Add new Smart Group - Select Devices or Users"
 	},
+
+	"Add admin basic user" : {
+		"prefix": "addAdmin",
+		"body": [
+			"## Add an Admin basic user",
+			"	Navigate to: Accounts » Administrators » List View",
+			"	Add » Add Admin",
+			"	[Tab]: Basic"
+			"		User Type: Basic",
+			"		User name: ${1:`Admin user name`}",
+			"		Password: ${2:`Password`}",
+			"		Confirm Password: ${3:`Password`}",
+			"		Require password change at next login: ${4:`Enabled | Disabled`}",
+			"		First Name: ${5:`First name`}",
+			"		Middle Name: ",
+			"		Last Name: ${6:`Last Name`}",
+			"		Email Address: ${7:`Email address`}",
+			"		Time Zone: ${8:`(GMT+10:00) Melbourne, Victoria, New South Wales`} ",
+			"		Locale: ${9:`English (Australia) [English (Australia)]`}",
+			"		Initial Landing Page: ${10:`Devices > Dashboard`}",
+			"		# Two-Factor Authentication Method",
+			"			Require Two-Factor Authentication: ${11:`Enabled | Disabled`}",
+			"		# Notification",
+			"			Message Type: ${12:`None | Email | SMS`}",
+			"	[Tab]: Roles",
+			"		Select Organization Group: ${13:`Organization Group`}",
+			"		Select Role: ${14:`Role`}",
+			"	[Tab]: API",
+			"		Authentication: ${15:`User credentials | Certificates`}",
+			"		Certificate Password: ${16:`Certificate Password`}",
+			"	Save",
+			""
+		]
+	},
+
 
 // Add apps - Internal iOS
 	"Add Internal app - iOS": {
@@ -239,26 +271,26 @@
 			"## Add Internal App - iOS",
 			"	Navigate to: Apps & Books » Applications » Native » Internal",
 			"	Add Application",
-			"		Application File: ${1: `appFileName.ipa`}",
+			"		Application File: ${1:`appFileName.ipa`}",
 			"	Upload » Save » Continue",
-			"		Name: ${2: `appName`}",
+			"		Name: ${2:`appName`}",
 			"		Version: ${3}",
 			"		Is Beta: ${4}",
 			"		Minimum OS: ${5}",
-			"		Device type: ${6: `iPhone || iPad || iPod Touch` }",
+			"		Device type: ${6:`iPhone | iPad | iPod Touch`}",
 			"		# Images » Icon",
-			"		${7: `image.png`}",
+			"		${7:`image.png`}",
 			"		Save and Assign » Add Assignment",
-			"		Select Assignment Groups: ${8: `Assignment`}",
-			"		App Delivery Method:  ${9: `Auto ||On Demand`}",
-			"		Deployment Begins On: ${10: `(Optional) Date and time`}",
+			"		Select Assignment Groups: ${8:`Assignment`}",
+			"		App Delivery Method:  ${9:`Auto |On Demand`}",
+			"		Deployment Begins On: ${10:`(Optional) Date and time`}",
 			"		# Policies",
-			"			Managed Access: ${11: `Enabled || Disabled` }",
-			"			Remove On Unenroll: ${12: `Enabled || Disabled` }",
-			"			Prevent Application Backup: ${13: `Enabled || Disabled` }",
-			"			Make App MDM Managed if User Installed: ${14: `Enabled || Disabled` }",
-			"			App Tunneling: ${15: `Enabled || Disabled` }",
-			"			Application Configuration: ${16: `Enabled || Disabled` }",
+			"			Managed Access: ${11:`Enabled | Disabled`}",
+			"			Remove On Unenroll: ${12:`Enabled | Disabled`}",
+			"			Prevent Application Backup: ${13:`Enabled | Disabled`}",
+			"			Make App MDM Managed if User Installed: ${14:`Enabled | Disabled`}",
+			"			App Tunneling: ${15:`Enabled | Disabled`}",
+			"			Application Configuration: ${16:`Enabled | Disabled`}",
 			"		Add",
 			"	Save & Publish » Publish",
 			""
@@ -268,10 +300,7 @@
 
 	"Save & Publish » Publish": {
 		"prefix": "S&P",
-		"body": [
-			"	Save & Publish » Publish",
-			""
-		],
+		"body": ["	Save & Publish » Publish",""],
 		"description": "Save & Publish » Publish"
 	},
 	
@@ -282,24 +311,24 @@
 			"## Add Internal App - Android"                                    ,
 			"    Navigate to: Apps & Books » Applications » Native » Internal",
 			"    Add Application",
-			"        Application File: ${1: `appFile.apk` }",
+			"        Application File: ${1:`appFile.apk`}",
 			"    Upload » Save » Continue",
-			"        Name: ${2: `appName` }",
+			"        Name: ${2:`appName`}",
 			"        Version: ",
-			"        Is Beta: ${3: `Yes / No` }",
-			"        Minimum OS: ${4: `min OS`}",
+			"        Is Beta: ${3:`Yes | No`}",
+			"        Minimum OS: ${4:`min OS`}",
 			"        Supported Models: ",
-			"        Is App Restricted to Silent Install: ${5: `Yes / No` }",
+			"        Is App Restricted to Silent Install: ${5:`Yes | No`}",
 			"        # Images » Icon",
-			"        ${6: `image.png` }",
+			"        ${6:`image.png`}",
 			"        Save and Assign » Add Assignment",
-			"        Select Assignment Groups: ${7: `Assignment` }",
-			"        App Delivery Method:  ${8: `Auto ||On Demand` }",
-			"        Deployment Begins On: ${9: `(Optional) Date and time` }",
+			"        Select Assignment Groups: ${7:`Assignment`}",
+			"        App Delivery Method:  ${8:`Auto | On Demand`}",
+			"        Deployment Begins On: ${9:`(Optional) Date and time`}",
 			"        # Policies",
-			"            Managed Access: ${10: `Enabled || Disabled` }",
-			"            App Tunneling: ${11: `Enabled || Disabled` }",
-			"            Application Configuration: ${12: `Enabled || Disabled` }",
+			"            Managed Access: ${10:`Enabled | Disabled`}",
+			"            App Tunneling: ${11:`Enabled | Disabled`}",
+			"            Application Configuration: ${12:`Enabled | Disabled`}",
 			"        Add",
 			"    Save & Publish » Publish",
 			""
@@ -314,31 +343,31 @@
 			"## Add in-house Android app to Android Enterprise app",
 			"    Navigate to: Apps & Books » Applications » Native » Public",
 			"    Add Application",
-			"        Managed By: '${1: Organization Group}'",
+			"        Managed By: '${1:`Organization Group`}'",
 			"        Platform: Android",
 			"        Source: 'Search app store'",
-			"        Name: '${2: App name}'",
+			"        Name: '${2:`App name`}'",
 			"    Next",
 			"    Private apps » +",
-			"    Upload APK: ${3: Android APK file}",
-			"    Title: '${4: App name}'",
+			"    Upload APK: ${3:`Android APK file`}",
+			"    Title: '${4:`App name`}'",
 			"    Create",
 			"        Enter your email address: ${5:Optional Email address}",
 			"        (You will get updates about your apps and developer account.)",
 			"    OK",
 			"    Click the app icon » OK",
 			"    # Details",
-			"        Name: '${6: App name}'",
+			"        Name: '${6:`App name`}'",
 			"    # SDK",
-			"        SDK Profile: '${7: Android SDK profile}'",
+			"        SDK Profile: '${7:`Android SDK profile`}'",
 			"    Save & Assign » Add assignment",
-			"        Select Assignment Groups: '${8: SmartGroup}'",
-			"        App Delivery Method: ${9: Auto || On demand}",
+			"        Select Assignment Groups: '${8:`SmartGroup`}'",
+			"        App Delivery Method: ${9:`Auto | On demand`}",
 			"        # Policies",
-			"            Managed Access: ${10: Enabled || Disabled}",
-			"            App Tunneling: ${11: Enabled || Disabled}",
+			"            Managed Access: ${10:`Enabled | Disabled`}",
+			"            App Tunneling: ${11:`Enabled | Disabled`}",
 			"            Pre-release Version: None",
-			"            Application Configuration: ${12: Enabled || Disabled}",
+			"            Application Configuration: ${12:`Enabled | Disabled`}",
 			"        Add",
 			"    Save & Publish » Publish",
 			""
@@ -349,31 +378,31 @@
 
 // Add VPP apps
 "Add VPP app": {
-	"prefix": "addVppApp",
+	"prefix": "addVPPAPP",
 	"body": [
 		"## Add VPP App",
 		"	Navigate to: Apps & Books » Applications » Native » Purchased",
 		"	Click: Sync Assets",
 		"	// Wait a few minutes and refresh the list",
-		"	Search the app: {{ VPP app name }}",
+		"	Search the app: ${1:`Purchased app name`}",
 		"	Confirm the app sync and if have enough licenses for the assignment",
 		"	Open the app",
 		"		Enable Device Assignment » OK",
 		"		Save & Assign » Add Assignment",
 		"		Add Assignment By » License Codes By Smart Group",
-		"			Select Smart Group: {{ Smart Group for the app assignment }}",
-		"			Allocated:  {{ Number of apps to allocate to this SG }}",
+		"			Select Smart Group: ${2:`Smart Group for the app assignment`}",
+		"			Allocated:  ${3:`Number of apps to allocate to this SG`}",
 		"		# Deployment",
-		"		Assignment Type: {{ Auto, On Demand }}",
-		"		Remove on unenroll: {{ Yes, No }}",
-		"		Prevent Application Backup: {{ Yes, No }}",
-		"		Make App MDM Managed if user installed: {{ Yes, No }}",
-		"		Use VPN: {{ Yes, No }}",
-		"			Per-App VPN Profile:  {{ VPN profile }}",
-		"		Send Application Configuration: {{ Yes, No }}",
-		"			Configuration Key:",
-		"			Value Type: ",
-		"			Configuration Value: ",
+		"		Assignment Type: ${4:`Auto | On Demand`}",
+		"		Remove on unenroll: ${5:`Yes | No`}",
+		"		Prevent Application Backup: ${6:`Yes | No`}",
+		"		Make App MDM Managed if user installed: ${7:`Yes | No`}",
+		"		Use VPN: ${8:`Yes | No`}",
+		"			Per-App VPN Profile:  ${9:`VPN profile`}",
+		"		Send Application Configuration: ${10:`Yes | No`}",
+		"			Configuration Key: ${11:`Key`}",
+		"			Value Type: ${12:`Type`}",
+		"			Configuration Value: ${13:`Value`}",
 		"	Save » Save & Publish » Publish",
 		""
 	],
@@ -391,6 +420,61 @@
 	"description": "Renew VPP token"
 },
 
+"Renew VPP Token - Intunes": {
+	"prefix": "renewVPPi",
+	"body": [
+		"## Prerequisites",
+		"	List all VPP apps and check number of licenses",
+		"	Check the number of apps license available",
+		"	Request more licenses if necessary",
+		"	Individual Account for access",
+		"",
+		"## Generate VPP Token",
+		"	Login to https://vpp.itunes.apple.com/au/store ",
+		"	(Check CI records for credentials)",
+		"		Click on the apple id drop-down button (Apple ID account) ",
+		"		Select: Account Summary",
+		"		Select: Download Token",
+		"	Save the token to upload to he MDM console",
+		"",
+		"## Upload new token to inTune",
+		"	Login to customer's MDM",
+		"	",
+		"	Navigate to: Microsoft Intune » Client apps » iOS VPP tokens",
+		"		Click ${1:`Apple ID for VPP account`}",
+		"		VPP token file: Click the folder icon",
+		"		Open the token file downloaded on 'Generate VPP Token' step",
+		"Click Save",
+		"",
+		"---",
+		"# Backout Plan",
+		"---",
+		"No backout required as there is no impact to purchased apps / devices.",
+		"",
+		"---",
+		"# Test Plan",
+		"---",
+		"",
+		"## Test Case - 01",
+		"	# Title: VPP token expire date updated",
+		"	# Test Steps:",
+		"		Navigate to: Microsoft Intune » Client apps » iOS VPP tokens",
+		"		Check the 'Expiration Date' associated with ${2:`Apple ID for VPP account`}",
+		"	# Expected Result:",
+		"		Valid date will be 1 year from date of token generation",
+"",
+		"## Test Case 2",
+		"	# Title: inTune / VPP Sync - App catalog syncs with VPP store",
+		"	# Test Steps:",
+		"		Navigate to: Microsoft Intune » Client apps » iOS VPP tokens", 
+		"		Select: ... » Sync",
+		"	# Expected Result: ",
+		"		Sync should complete",
+		""
+	],
+	"description": "Renew VPP token on Itunes"
+},
+
 // Add Web clip - Airwatch
 	"Add Web clip - iOS": {
 		"prefix": "webclip",
@@ -398,21 +482,21 @@
 			"## Add Web clip profile ''",
 			"	Navigate to: Devices » Profiles & Resources » Profiles",
 			"	Add » Add Profile » iOS",
-			"		Name: {{Profile Name}}",
-			"		Description: {{Profile Description}}",
+			"		Name: ${1:`Profile Name`}",
+			"		Description: ${2:`Profile Description`}",
 			"		Assignment Type: Auto",
-			"		Allow Removal: {{ Always || With Authorization || Never }}",
-			"		Managed By: {{ Organization Group }}",
-			"		Assigned Groups: {{ Smart Group assignment }}",
-			"		Exclusions: {{ No || Yes }} ",
-			"			Excluded Groups: {{ ifExclusion: Smart Group assignment }}",
+			"		Allow Removal: ${3:`Always | With Authorization | Never`}",
+			"		Managed By: ${4:`Organization Group`}",
+			"		Assigned Groups: ${5:`Smart Group assignment`}",
+			"		Exclusions: ${6:`No | Yes`} ",
+			"			Excluded Groups: ${7:`ifExclusion: Smart Group assignment`}",
 			"		# Web Clips » Configure",
-			"			Label: {{ Label to identify Web Clip }}",
-			"			URL: {{ Web clip URL }}",
-			"			Removable: {{ Enable / Disable }}",
-			"			Icon: {{ upload icon file }}",
-			"			Precomposed Icon: {{ Enable / Disable }}",
-			"			Full Screen: {{ Enable / Disable }}",
+			"			Label: ${8:`Label to identify Web Clip`}",
+			"			URL: ${9:`Web clip URL`}",
+			"			Removable: ${10:`Enable / Disable`}",
+			"			Icon: ${11:`upload icon file`}",
+			"			Precomposed Icon: ${12`Enable / Disable`}",
+			"			Full Screen: ${13:`Enable / Disable`}",
 			"		Save & Publish » Publish",
 			""
 		],
@@ -427,16 +511,16 @@
 			"	Navigate to: Devices » Profiles & Resources » Profiles",
 			"	Add » Add Profile » iOS:",
 			"	# General",
-			"		Name: {{ * Profile Name }}",
-			"		Description: {{ Profile Description }}",
-			"		Deployment: {{ Deployment: Managed / Manual }}",
-			"		Assignment Type: {{ Assignment Type: Auto / Optional / Compliance }",
-			"		Allow Removal: {{ Allow Removal: Always / With authorization / Never }}",
-			"		Managed By: {{ Managed by Organization Group }}",
-			"		Assigned Groups: ",
-			"		Exclusions: {{ Exclusions: NO / ?YES }}",
-			"			Excluded Groups: {{ ? Profile assignment exclusion }}",
-			"	# ... * Add payload",
+			"		Name: ${1:`Profile Name`}",
+			"		Description: ${2:`Profile Description`}",
+			"		Deployment: ${3:`Deployment: Managed / Manual`}",
+			"		Assignment Type: ${4:`Assignment Type: Auto / Optional / Compliance`}",
+			"		Allow Removal: ${5:`Allow Removal: Always / With authorization / Never`}",
+			"		Managed By: ${6:`Managed by Organization Group`}",
+			"		Assigned Groups: ${7:`Smart Group`}",
+			"		Exclusions: ${8:`Exclusions: NO / ?YES`}",
+			"			Excluded Groups: ${9:`? Profile assignment exclusion`}",
+			"	# `... * Add payload`",
 			"	Save & Publish » Publish",
 			""
 		],
@@ -445,10 +529,7 @@
 
 	"Profile path": {
 		"prefix": "profiles>",
-		"body": [
-			"Navigate to: Devices » Profiles & Resources » Profiles",
-			""
-		],
+		"body": ["Navigate to: Devices » Profiles & Resources » Profiles",""],
 		"description": "Add the profile path"
 	},
 
@@ -482,40 +563,40 @@
 			"	Navigate to: Devices » Profiles & Resources » Profiles",
 			"	Add » Add Profile » iOS",
 			"	# General",
-			"		Name: {{ Profile Name }}",
-			"		Description: {{ Profile Description }}",
-			"		Deployment: {{ Managed }}",
+			"		Name: ${1:`Profile Name`}",
+			"		Description: ${2:`Profile Description`}",
+			"		Deployment: ${3:`Managed`}",
 			"		Assignment Type: Auto",
 			"		Allow Removal: Never",
-			"		Managed By: {{ OG Managing this profile}}",
-			"		Smart Groups: {{ Smart Group for assignment}}",
-			"		Exclusions: {{ No || Yes }}",
-			"			Excluded Groups: {{ If exclusion is enabled - SG to exclude }}",
+			"		Managed By: ${4:`OG Managing this profile`}",
+			"		Smart Groups: ${5:`Smart Group for assignment`}",
+			"		Exclusions: ${6:`No | Yes`}",
+			"			Excluded Groups: ${7:`If exclusion is enabled - SG to exclude`}",
 			"		Additional Assignment Criteria:",
-			"			{{ Tick || Untick }} - Install only on devices inside selected areas",
-			"			{{ Tick || Untick }} - Enable Scheduling and install only during selected time periods",
-			"				Removal Date: {{ date for removal }}",
+			"			${8:`Tick | Untick`} - Install only on devices inside selected areas",
+			"			${9:`Tick | Untick`} - Enable Scheduling and install only during selected time periods",
+			"				Removal Date: ${10:`date for removal`}",
 			"	Select: Single App Mode » Configure",
 			"	# Single App Mode",
-			"	Filter type: {{ 'Lock device into a single app' || 'Permitted apps for autonomous single app mode' }}",
-			"	Application Bundle ID: {{ App ID }}",
+			"	Filter type: ${11:`'Lock device into a single app' | 'Permitted apps for autonomous single app mode'`}",
+			"	Application Bundle ID: ${12:`App ID`}",
 			"	# Optional Settings",
-			"		Disable touch screen: {{ Tick || Untick }}",
-			"		Disable device rotation: {{ Tick || Untick }}",
-			"		Disable volume buttons: {{ Tick || Untick }}",
-			"		Disable ringer switch: {{ Tick || Untick }}",
-			"		Disable sleep/wake button: {{ Tick || Untick }}",
-			"		Disable auto-lock: {{ Tick || Untick }}",
-			"		Enable VoiceOver: {{ Tick || Untick }}",
-			"			Allow User to Adjust VoiceOver: {{ Tick || Untick }}",
-			"		Enable zoom: {{ Tick || Untick }}",
-			"			Allow User to Adjust Zoom: {{ Tick || Untick }}",
-			"		Enable color inversion: {{ Tick || Untick }}",
-			"			Allow User to Adjust Invert Colors: {{ Tick || Untick }}",
-			"		Enable AssistiveTouch: {{ Tick || Untick }}",
-			"			Allow User to Adjust Assistive Touch: {{ Tick || Untick }}",
-			"		Enable Speak Selection: {{ Tick || Untick }}",
-			"		Enable monaural audio: {{ Tick || Untick }}",
+			"		Disable touch screen: ${13:`Tick | Untick`}",
+			"		Disable device rotation: ${14:`Tick | Untick`}",
+			"		Disable volume buttons: ${15:`Tick | Untick`}",
+			"		Disable ringer switch: ${16:`Tick | Untick`}",
+			"		Disable sleep/wake button: ${17:`Tick | Untick`}",
+			"		Disable auto-lock: ${18:`Tick | Untick`}",
+			"		Enable VoiceOver: ${19:`Tick | Untick`}",
+			"			Allow User to Adjust VoiceOver: ${20:`Tick | Untick`}",
+			"		Enable zoom: ${21:`Tick | Untick`}",
+			"			Allow User to Adjust Zoom: ${22:`Tick | Untick`}",
+			"		Enable color inversion: ${23:`Tick | Untick`}",
+			"			Allow User to Adjust Invert Colors: ${24:`Tick | Untick`}",
+			"		Enable AssistiveTouch: ${25:`Tick | Untick`}",
+			"			Allow User to Adjust Assistive Touch: ${26:`Tick | Untick`}",
+			"		Enable Speak Selection: ${27:`Tick | Untick`}",
+			"		Enable monaural audio: ${28:`Tick | Untick`}",
 			"	Save and Publish » Publish",
 			""
 		],
@@ -527,18 +608,18 @@
 		"body": [
 			"## Assign app to smart group",
 			"    Navigate to: Apps & Books » Applications » Native » Internal",
-			"    Search and select: {AppName}} {version}",
+			"    Search and select: ${1:`AppName`} ${2:`version`}",
 			"    Assign » Add Assignment",
-			"        Select Assignment Groups: { Smart Group / User Group / Organization Group }",
-			"        App Delivery Method: { Auto / On Demand }",
-			"        Auto update devices with previous versions { Yes / No }",
+			"        Select Assignment Groups: ${3:`Smart Group | User Group | Organization Group`}",
+			"        App Delivery Method: ${4:`Auto | On Demand`}",
+			"        Auto update devices with previous versions: ${5:`Yes | No`}",
 			"        # Policies",
-			"            Managed Access: { Enabled / Disabled }",
-			"            Remove On Unenroll: { Enabled / Disabled }",
-			"            Prevent Application Backup: { Enabled / Disabled }",
-			"            Make App MDM Managed if User Installed: { Enabled / Disabled }",
-			"            App Tunneling: { Enabled / Disabled }",
-			"            Application Configuration: { Enabled / Disabled }",
+			"            Managed Access: ${6:`Enabled | Disabled`}",
+			"            Remove On Unenroll: ${7:`Enabled | Disabled`}",
+			"            Prevent Application Backup: ${8:`Enabled | Disabled`}",
+			"            Make App MDM Managed if User Installed: ${9:`Enabled | Disabled`}",
+			"            App tunneling: ${10:`Enabled | Disabled`}",
+			"            Application Configuration: ${11:`Enabled | Disabled`}",
 			"        Add",
 			"    Save & Publish » Publish",
 			""
@@ -549,16 +630,16 @@
 	"AW - Add Content Repository": {
 		"prefix": "addContent",
 		"body": [
-			"## Create new Content Locker O365 repository for '{{ Repository Name }}'",
+			"## Create new Content Locker O365 repository for '${`Repository Name`}'",
 			"	Navigate to: Content » Content Locker » Repositories » Admin Repositories",
 			"	Add",
-			"		Name: {{ Repository Name }}",
+			"		Name: ${1:`Repository Name`}",
 			"		Type: SharePoint O365 ADFS",
-			"		Link: {{ SharePoint URL }} ",
-			"		Organization Group: {{ Organization Group }}",
+			"		Link: ${2:`SharePoint URL`} ",
+			"		Organization Group: ${3:`Organization Group`}",
 			"	# Authentication",
 			"		Authentication Type: User",
-			"			Username: {{ SharePoint Username }}",
+			"			Username: ${4:`SharePoint Username`}",
 			"			Password: Check CI record",
 			"		Access via Content Gateway: Disabled",
 			"		Allow Inheritance: Enable",
@@ -578,9 +659,9 @@
 			"			Allow Edit: Disabled",
 			"	---",
 			"	# Assignment",
-			"		Device Ownership: [Any / Corporate / BYOD]",
-			"		Organization Groups: RFDS Nurse ",
-			"		User Groups: {{ User Group }}",
+			"		Device Ownership: ${6:`Any | Corporate | BYOD`}",
+			"		Organization Groups: ${7:`Organization Groups`}",
+			"		User Groups: ${`User Groups`}",
 			"	---",
 			"	# Deployment",
 			"		Transfer Method: Any",
@@ -588,9 +669,9 @@
 			"		Download Type: Automatic",
 			"		Download Priority: High",
 			"		Required: Enable",
-			"		Download Date: 'Leave blank'",
-			"		Effective Date: 'Leave blank'",
-			"		Expiration Date: 'Leave blank'",
+			"		Download Date: `Leave blank`",
+			"		Effective Date: `Leave blank`",
+			"		Expiration Date: `Leave blank`",
 			"	Save",
 			""
 		],
@@ -604,8 +685,8 @@
 			"## Add template to Messages Templates",
 			"Navigate to: Settings » Devices & Users » General » Message Templates",
 			"Add",
-			"	Name: ",
-			"	Description: ",
+			"	Name: ${1:`Name`}",
+			"	Description: ${2:`Description`}",
 			"	Category: [",
 			"		Select [],",
 			"		Enrollment [],",
@@ -628,7 +709,7 @@
 			"	Add",
 			"",
 			"	Select Language: 'English (Australia [English (Australia)])'",
-			"	Default: {{ Yes || No }}",
+			"	Default: ${`Yes | No`}",
 			"	Message Type: [ Email, SMS, Push ]",
 			"	# Email",
 			"		Email Content Format: [ Plain Text, HTML ]",
@@ -653,8 +734,8 @@
 			"## Create a new Label",
 			"	Navigate to: Devices & Users » Labels",
 			"	Add Label",
-			"		Name: ",
-			"		Description: ",
+			"		Name: ${1:`Label name`}",
+			"		Description: ${2:`Label description`}",
 			"		Type: Manual",
 			"	Save",
 			""
@@ -666,9 +747,9 @@
 		"prefix": "label2app",
 		"body": [
 			"## Apply Label to app",
-			"	Select app: {{App Name}}",
+			"	Select app: ${1:`App Name`}",
 			"	Actions » Apply To Label",
-			"	Select: {{Label}}",
+			"	Select: ${2:`Label`}",
 			"	Apply » Ok",
 			""
 		],
@@ -682,32 +763,32 @@
 			"## Add app to the App Distribution Library",
 			"	Navigate to: Apps » App Catalog",
 			"	Add+ » In-House",
-			"	Upload In-House App: ???????????????????????????????????????????????????????????????????????",
+			"	Upload In-House App: ${1:`App file name`}",
 			"	Next",
 			"	# Describe",
-			"	Application Name: ",
-			"	Display Version: ???????????????????????",
-			"	Code Version: ??????????????????????????",
-			"	Description: ",
-			"	Category: ????????????????????????????????????????????????????????????????  ",
+			"	Application Name: ${2:`Application name`}",
+			"	Display Version: ${3:`App version`}",
+			"	Code Version: ${4:`Code version`}",
+			"	Description: ${5:`App description`}",
+			"	Category: ${6:`Category`}",
 			"	Next",
 			"	# App Store",
 			"	# Apps@work catalog",
-			"	Feature this App in the Apps@Work catalog: {Yes || No}",
-			"	Featured Banner: {Yes || No}",
+			"	Feature this App in the Apps@Work catalog: ${7:`Yes | No`}",
+			"	Featured Banner: ${8:`Yes | No`}",
 			"		Short Description",
-			"		Banner Style: {Light || Dark || Blue || Green || Orange}",
-			"	Override URL:",
+			"		Banner Style: ${9:`Light | Dark | Blue | Green | Orange`}",
+			"	Override URL: ${10:`Override UR`}",
 			"	# Icon and screenshots",
-			"		App icon:",
+			"		App icon: ${11:`App icon`}",
 			"	Next",
 			"	# App Configuration",
 			"	# App Installation Settings",
-			"	Mandatory: {Yes || No}",
-			"		Silent Install: {Yes || No}",
-			"		Enforce this version: {Yes || No}",
+			"	Mandatory: ${12:`Yes | No`}",
+			"		Silent Install: ${13:`Yes | No`}",
+			"		Enforce this version: ${14:`Yes | No`}",
 			"	#Per app VPN settings",
-			"	Per App VPN by Label Only: {Yes || No}",
+			"	Per App VPN by Label Only: ${15:`Yes | No`}",
 			"	Finish",
 			""
 		],
@@ -717,12 +798,12 @@
 	"Test Case": {
 		"prefix": "testcase",
 		"body": [
-			"## Test Case - ${1: `Test Case number`}",
-			"    Title: ${2: `Test title`}",
-			"    Description: ${3: `Test Description`}",
-			"    Precondition: ${4: `Precondiction`}",
-			"    # Test Steps: ${5: `Test Steps`}",
-			"    # Expected Result: ${6: `Test expected result`}",
+			"## Test Case - ${1:`Test Case number`}",
+			"    Title: ${2:`Test title`}",
+			"    Description: ${3:`Test Description`}",
+			"    Precondition: ${4:`Precondiction`}",
+			"    # Test Steps: ${5:`Test Steps`}",
+			"    # Expected Result: ${6:`Test expected result`}",
 			""
 		],
 		"description": "Test Case"
@@ -747,7 +828,7 @@
             "    Log into the Apple Business Manager portal https://business.apple.com",
             "    Authenticate with a Device Manager account (Check CI record)",
             "    using Device Manager account",
-            "    Select: MDM Servers » {{ the MDM server to renew token }}",
+            "    Select: MDM Servers » ${`the MDM server to renew token`}",
             "    Select: 'Get Token'",
             "    Save the P7M file ",
             "",
@@ -827,15 +908,18 @@
 		"prefix": "risk",
 		"body": [
 			"## Risk - Implementation risks, likelihood and mitigation steps",
-			"	# Risks: {{ What could go wrong with the implementation? }}",
+			"	# Risks:",
+			"		${1:`What could go wrong with the implementation?`}",
 			"		",
-			"	# Likelihood: {{ What is the probability that it will happen? }}",
+			"	# Likelihood:",
+			"		${2:`What is the probability that it will happen?`}",
 			"		",
-			"	# Mitigation: {{ What is planned to mitigate this from happening? }}",
+			"	# Mitigation:",
+			"		${3:`What is planned to mitigate this from happening?`}",
 			"		",
 			"",
 			"## Business Impact",
- 
+			"		${4:`Business Impact`}"
 			""
 		],
 		"description": "Risk - Implementation risks, likelihood and mitigation steps"
@@ -844,10 +928,10 @@
 	"Use Case": {
 		"prefix": "usecase",
 		"body": [
-			"## Use Case",
-			"	Title: ${ What is the goal? }",
-			"	Actor: ${ Who desires it? }",
-			"	Scenario: ${ How is accomplished? }",
+			"## Use Case - ${1:`Use Case ID`}",
+			"	Title: ${2:`What is the goal?`}",
+			"	Actor: ${3:`Who desires it?`}",
+			"	Scenario: ${4:`How is accomplished?`}",
 			""
 		],
 		"description": "Use cases"
