@@ -948,5 +948,39 @@
 			""
 		],
 		"description": "Use cases"
+	},
+// Intune
+	"Renew enrolment token on Intune": {
+		"prefix": "ms_tokenDEP",
+		"body": [
+			"## Apple Business Manager (ABM):",
+			"    Navigate to: https://business.apple.com ",
+			"    Log on with the Apple ID (as per CI record)",
+			"    Click 'Settings' at the bottom left",
+			"    Select server",
+			"    Click 'Download Token'",
+			"    Click 'Download Server Token'",
+			"",
+			"## Upload new token to Intune",
+			"    Log into customers environment ",
+			"    Navigate to: Microsoft Intune » Device Enrollment » Apple Enrollment » Enrollment program tokens",
+			"    Select: ${1:`Token Name`}",
+			"    Click Renew Token",
+			"    Apple ID = ${2:`Enrollment program token Apple ID`}",
+			"    Apple Token = ${3:`Token file downloaded from ABM`} //Click the folder icon the browse to the new token and select it",
+			"    Click: Renew Token",
+			"",
+			"",
+			"# Test Plan",
+			"",
+			"## Test Case - 01",
+			"    Title: Devices are still Syncing from Apple to Intune",
+			"    Precondition: Change was implemented",
+			"    # Test Steps:",
+			"        Navigate to: Microsoft Intune » Device Enrollment » Apple Enrollment » Enrollment program tokens",
+			"        Select: ${4:`Token Name`}",
+			"    # Expected Result: Under the Overview, the expiration date is one year later"
+		],
+		"description": "Renew enrolment token on Intune"
 	}
 }
